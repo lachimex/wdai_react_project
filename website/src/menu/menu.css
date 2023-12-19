@@ -1,0 +1,28 @@
+:root{
+    --subpages-width: 800;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    height: 50px;
+    background-color: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+#icons{
+    width: ();
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav img{
+    height: 30px;
+    margin-right: 30px;
+}
