@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mikro projekt</title>
+    <link rel="stylesheet" href="news_style.css">
+
+</head>
+<body>
+    <nav>
+        <a href="index.html">Sklep</a>
+        <a href="course.html">Kursy</a>
+        <a href="news.html" class="active">Kontakt</a>
+    </nav>
+    <main>
+        <div class="contact_map_container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.9740721380094!2d19.910023276864255!3d50.0680472148235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165ba4c2a49e97%3A0xc4bef8eb0fcc3739!2sCentrum%20Informatyki%20Akademii%20G%C3%B3rniczo-Hutniczej%20w%20Krakowie%2C%20Kawiory%2021%2C%2030-055%20Krak%C3%B3w!5e0!3m2!1spl!2spl!4v1699004638544!5m2!1spl!2spl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="contact_map"></iframe>
+        </div>
+        <div class="contact_content">
+            <p>Zapraszamy do naszego biura! Przyjdź i zapytaj nas o co tylko chcesz, jesteśmy otwarci <strong>24/7h!!!</strong></p>
+            <p>Jesteś zbyt leniwy, żeby spotkać się z nami osobiście? Napisz do nas wiadomość!</p>
+            <form onsubmit="return validate()">
+                <div class="input-group">
+                    <input class="input" required autocomplete="off" type="text" name="email" id="email" required>
+                    <label class="label" for="email">Email</label>
+                </div>
+                <div class="input-group">
+                    <textarea class="input message_input" required autocomplete="off" name="message" id="message" maxlength="100" required></textarea>
+                    <label class="label" for="message">Twoje pytanie</label>
+                </div>
+
+                <div id="the-count">
+                    <span id="current">0</span>
+                    <span id="maximum">/ 100</span>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>Uwaga na nisko przelatujące drony!!!</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

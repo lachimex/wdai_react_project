@@ -1,0 +1,127 @@
+@import "style.css";
+
+.course_section{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+}
+
+.course:first-child{
+    margin-top: 2%;
+}
+
+.course:last-child{
+    margin-bottom: 2%;
+}
+
+.course:nth-child(2n+1){
+    flex-direction: row-reverse;
+    
+}
+
+.course:nth-child(2n+1) > img{
+    flex-direction: row-reverse;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+
+.course{
+    display: flex;
+    height: 300px;
+    width: auto;
+    margin: 1% 2% 1% 2%;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 20px;
+    border: 5px solid;
+    border-color: black;
+    transition: ease-in-out 0.2s;
+}
+
+.course:hover{
+    scale: 1.05;
+}
+
+.course img{
+    width: 40%;
+    height: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.course_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 100%;
+}
+
+.course_content p {
+    height: auto;
+    width: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+}
+
+.course_content button {
+    width: 20%;
+    height: 10%;
+    min-width: 100px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(214, 188, 159);
+    margin-bottom: 2%;
+    transition: ease-in-out 0.2s;
+}
+
+.course_content button:hover {
+    background-color: rgb(134, 111, 87);
+    scale: 1.05;
+}
+
+.course_content button:active {
+    scale: 0.9;
+}
+
+.course_content h1 {
+    font-size: 60px;
+    margin-bottom: 0%;
+    margin-top: 0%;
+}
+
+strong {
+    font-weight: bolder;
+}
+
+@media screen and (max-width: 800px){
+    .course_section {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .course img {
+        display: none;
+    }
+    
+    .course {
+        height: auto;
+    }
+
+    .course_content {
+        width: 100%;
+    }
+
+    main {
+        margin-top: 40px;
+    }
+}
