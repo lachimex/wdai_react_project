@@ -5,12 +5,12 @@ export default function Menu() {
         <>
             <nav>
                 <div id="name">
-                    <img src="https://www.reshot.com/preview-assets/icons/QMKDX7THUZ/drone-QMKDX7THUZ.svg"></img>
+                    <img src="https://www.reshot.com/preview-assets/icons/QMKDX7THUZ/drone-QMKDX7THUZ.svg" alt="icon"></img>
                     <h1>Dronify</h1>
                 </div>
                 <div id="icons">
-                    <Link to='/cart'><img src="https://www.svgrepo.com/show/533043/cart-shopping.svg" /></Link>
-                    <Link to='/account'><img src="https://www.svgrepo.com/show/456992/account.svg" /></Link>
+                    <Link to='/cart'><img src="https://www.svgrepo.com/show/533043/cart-shopping.svg" alt="cartIcon" /></Link>
+                    <Link to='/account'><img src="https://www.svgrepo.com/show/456992/account.svg" alt="accountIcon" /></Link>
                 </div>
             </nav>
             <div id="subnav">

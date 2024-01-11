@@ -1,8 +1,15 @@
-export default function drone1(){
+import "../drony/style.css"
+export default function drone1({name, srcPath}){
+    const imgPath = '/media/'+srcPath
+    console.log(imgPath)
     return (
-        <div id="drone_root">
-            <img src="../media/drone1.jpg"></img>
-            <h1>Pierwszy dron</h1>
-        </div>
-    )
+            <main>
+                <div className="container">
+                    <img src={imgPath} alt="drone1"/>
+                    <a href="#">
+                        <button>{name}</button>
+                    </a>
+                </div>
+            </main>
+        )
 }

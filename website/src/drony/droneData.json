@@ -1,0 +1,206 @@
+[
+  {
+    "name": "Cetus FPV",
+    "description": [
+      "Cetus FPV to dron stworzony z myślą o miłośnikach lotów FPV (First Person View). Poznaj jego wyjątkowe cechy:",
+      "Szybki i zwrotny: Cetus FPV oferuje dynamiczny i zwrotny lot, co pozwala na imponujące manewry w powietrzu.",
+      "Wysoka jakość obrazu: Dron jest wyposażony w kamerę, która umożliwia nagrywanie wideo i oglądanie obrazu w czasie rzeczywistym w dobrej jakości.",
+      "Odpowiedni dla FPV: Cetus FPV jest gotowy do lotów w trybie FPV i obsługuje gogle FPV."
+    ],
+    "price": "1299 PLN",
+    "img_path": "cetusFPV.jpg",
+    "drone_type": "FPV"
+  },
+  {
+    "name": "DJI Avata",
+    "description": [
+      "DJI Avata to dron stworzony do profesjonalnych zastosowań, oferujący zaawansowane możliwości i niezrównaną jakość obrazu. Poznaj jego wyjątkowe cechy:",
+      "Kamera 8K: Dron jest wyposażony w kamerę o rozdzielczości 8K, co pozwala na nagrywanie wideo i robienie zdjęć w niesamowitej jakości.",
+      "Świetna stabilizacja: Dron oferuje zaawansowany system stabilizacji, co pozwala na płynne i stabilne nagrania nawet podczas dynamicznych lotów.",
+      "Długi czas lotu: Dzięki zaawansowanym akumulatorom, DJI Avata może pozostać w powietrzu przez dłuższy czas."
+    ],
+    "price": "7499 PLN",
+    "img_path": "djiAvata.jpg",
+    "drone_type": "DJI"
+  },
+  {
+    "name": "DJI FPV",
+    "description": [
+      "DJI FPV to dron zaprojektowany specjalnie dla miłośników lotów w trybie FPV (First Person View). Poznaj jego wyjątkowe cechy:",
+      "Kamera 4K: Dron jest wyposażony w kamerę o rozdzielczości 4K, co pozwala na nagrywanie wideo i oglądanie obrazu w czasie rzeczywistym w jakości 4K.",
+      "Tryb FPV: Dzięki specjalnemu trybowi FPV, możesz doświadczyć lotu z widokiem z kokpitu drona.",
+      "Szybki i zwrotny: DJI FPV oferuje dynamiczny i zwrotny lot, co pozwala na imponujące manewry w powietrzu."
+    ],
+    "price": "3199 PLN",
+    "img_path": "djiFPV.jpg",
+    "drone_type": "FPV"
+  },
+  {
+    "name": "DJI Inspire",
+    "description": [
+      "DJI Inspire to profesjonalny dron stworzony do zaawansowanych zastosowań w dziedzinie filmowania i fotografii. Poznaj jego wyjątkowe cechy:",
+      "Kamera 6K: Dron jest wyposażony w kamerę o rozdzielczości 6K, co pozwala na nagrywanie wideo i robienie zdjęć w niezwykłej jakości.",
+      "Składane podwozie: Dzięki składanemu podwoziu, DJI Inspire jest łatwy do transportu i przechowywania.",
+      "Wysoka wydajność: Dron oferuje zaawansowane możliwości lotu i obsługuje profesjonalny sprzęt fotograficzny i filmowy."
+    ],
+    "price": "8999 PLN",
+    "img_path": "djiInspire.jpg",
+    "drone_type": "DJI"
+  },
+  {
+    "name": "iFlight Chimera 7",
+    "description": [
+      "iFlight Chimera 7 to zaawansowany dron przeznaczony dla miłośników lotów FPV (First Person View). Poznaj jego wyjątkowe cechy:",
+      "Szybki i zwrotny: Chimera 7 oferuje dynamiczny i zwrotny lot, co pozwala na imponujące manewry w powietrzu.",
+      "Wysoka jakość obrazu: Dron jest wyposażony w kamerę, która umożliwia nagrywanie wideo i oglądanie obrazu w czasie rzeczywistym w doskonałej jakości.",
+      "Odpowiedni dla FPV: Chimera 7 jest gotowy do lotów w trybie FPV i obsługuje gogle FPV."
+    ],
+    "price": "1799 PLN",
+    "img_path": "himera7.jpg",
+    "drone_type": "FPV"
+  },
+  {
+    "name": "DJI Mavic Air 2",
+    "description": [
+      "DJI Mavic Air 2 to dron, który łączy w sobie jakość obrazu i doskonałe możliwości lotu. Poznaj jego wyjątkowe cechy:",
+      "Kamera 4K HDR: Mavic Air 2 jest wyposażony w kamerę o rozdzielczości 4K HDR, co pozwala na nagrywanie wideo i robienie zdjęć w niezwykłej jakości.",
+      "Długi czas lotu: Dron może latać przez długi czas, co umożliwia rozszerzone sesje nagrywania i odkrywanie piękna z powietrza.",
+      "Inteligentne funkcje: Mavic Air 2 oferuje liczne inteligentne funkcje, takie jak Tryb Śledzenia, SmartCapture i wiele innych, które uczynią Twoje nagrania jeszcze bardziej kreatywnymi."
+    ],
+    "price": "3699 PLN",
+    "img_path": "mavic-air-2.jpg",
+    "drone_type": "DJI"
+  },
+  {
+    "name": "DJI Mavic Air",
+    "description": [
+      "DJI Mavic Air to kompaktowy dron, który oferuje szeroki zakres możliwości. Oto kilka unikalnych cech tego modelu:",
+      "Kamera 4K: Mavic Air jest wyposażony w kamerę o rozdzielczości 4K, co pozwala na nagrywanie wideo i robienie zdjęć w doskonałej jakości, zachowując niesamowite szczegóły.",
+      "Wszystkie kolory tęczy: Dron jest dostępny w różnych kolorach, aby dopasować go do Twojego stylu i preferencji.",
+      "Inteligentne tryby lotu: Mavic Air oferuje inteligentne tryby lotu, takie jak \"Śledź Mnie\" i \"Drift\", które umożliwiają kreatywne i dynamiczne nagrywanie."
+    ],
+    "price": "2899 PLN",
+    "img_path": "mavicAir.jpg",
+    "drone_type": "DJI"
+  },
+  {
+    "name": "DJI Mavic Air 3",
+    "description": [
+      "DJI Mavic Air 3 to najnowszy model drona, który oferuje jeszcze więcej możliwości i doskonałą jakość obrazu. Poznaj jego nowatorskie cechy:",
+      "Kamera 5K HDR: Mavic Air 3 jest wyposażony w kamerę o rozdzielczości 5K HDR, co pozwala na nagrywanie wideo i robienie zdjęć w niesamowitej jakości.",
+      "Wytrzymała bateria: Dron ma wydajną baterię, która pozwala na dłuższy czas lotu i eksplorację obszarów z dala od miejsca startu.",
+      "Zaawansowane stabilizatory: Mavic Air 3 posiada zaawansowane stabilizatory, które zapewniają płynne i stabilne nagrania, nawet przy silnych wiatrach."
+    ],
+    "price": "4299 PLN",
+    "img_path": "mavicAir3JPG.jpg",
+    "drone_type": "DJI"
+  },
+  {
+    "name": "DJI Mavic Mini",
+    "description": [
+      "DJI Mavic Mini to ultralekki i kompaktowy dron, idealny dla początkujących i osób, które cenią mobilność. Pomimo niewielkich rozmiarów, oferuje wiele zaawansowanych funkcji. Główne cechy:",
+      "Kamera 2.7K: Mavic Mini jest wyposażony w kamerę o rozdzielczości 2.7K, co pozwala na nagrywanie wideo i robienie zdjęć w dobrej jakości.",
+      "Ultralekki: Dron waży zaledwie 249 gramów, co oznacza, że w niektórych krajach nie wymaga rejestracji.",
+      "Stabilizacja: Oferuje stabilizację na trzech osiach, co pozwala na płynne nagrywanie w trakcie lotu."
+    ],
+    "price": "1699 PLN",
+    "img_path": "mavicMini.jpg",
+    "drone_type": "DJI"
+  },
+  {
+    "name": "DJI Mavic Mini 2",
+    "description": [
+      "DJI Mavic Mini 2 to udoskonalony model drona, który jest idealny dla miłośników fotografii i filmowania z powietrza. Ten kompaktowy dron oferuje doskonałą jakość obrazu i wydajność w niewielkim rozmiarze.Główne cechy:",
+      "Wysokiej jakości kamera: Mavic Mini 2 jest wyposażony w kamerę o rozdzielczości 4K, co pozwala na nagrywanie wideo i robienie zdjęć w imponującej jakości.",
+      "Świetna stabilizacja: Dron wyposażony jest w zaawansowany system stabilizacji, co pozwala na płynne i stabilne nagrania.",
+      "Składane śmigła: Dzięki składanym śmigłom, Mavic Mini 2 jest łatwy do przenoszenia i przechowywania."
+    ],
+    "price": "2799 PLN",
+    "img_path": "maviMini2.jpg",
+    "drone_type": "DJI"
+  },
+  {
+    "name": "DJI Mavic Mini 3",
+    "description": [
+      "DJI Mavic Mini 3 to najnowszy model ultralekkiego drona, idealny dla entuzjastów lotnictwa i fotografii. Ten kompaktowy dron oferuje jeszcze więcej zaawansowanych funkcji i doskonałą jakość obrazu. Główne cechy:",
+      "Kamera 5.7K: Mavic Mini 3 jest wyposażony w kamerę o rozdzielczości 5.7K, co pozwala na nagrywanie wideo i robienie zdjęć w najwyższej jakości.",
+      "Ultralekki: Dron jest lekki i kompaktowy, co ułatwia przenoszenie i loty w trudno dostępnych miejscach.",
+      "Stabilizacja: Oferuje zaawansowaną stabilizację na trzech osiach, co pozwala na płynne nagrywanie nawet w trudnych warunkach."
+    ],
+    "price": "3499 PLN",
+    "img_path": "mavicMini3.jpg",
+    "drone_type": "DJI"
+  },
+  {
+    "name": "DJI Mavic Pro",
+    "description": [
+      "DJI Mavic Pro to zaawansowany dron dla profesjonalistów, który oferuje doskonałą jakość obrazu i liczne funkcje. To narzędzie idealne do filmowania z powietrza i fotografii lotniczej. Główne cechy:",
+      "Kamera 4K: Mavic Pro jest wyposażony w kamerę o rozdzielczości 4K, co pozwala na nagrywanie wideo i robienie zdjęć w najwyższej jakości.",
+      "Zaawansowana stabilizacja: Dron oferuje zaawansowany system stabilizacji, co pozwala na płynne i stabilne nagrania nawet przy trudnych warunkach pogodowych.",
+      "Składane śmigła: Mavic Pro posiada składane śmigła, co ułatwia jego przenoszenie i transport."
+    ],
+    "price": "4599 PLN",
+    "img_path": "mavicPro.jpg",
+    "drone_type": "DJI"
+  },
+  {
+    "name": "iFlight Nazgul 5",
+    "description": [
+      "iFlight Nazgul 5 to dron zaprojektowany specjalnie dla miłośników lotów FPV. Poznaj jego wyjątkowe cechy:",
+      "Szybki i zwrotny: Nazgul 5 oferuje dynamiczny i zwrotny lot, co pozwala na imponujące manewry w powietrzu.",
+      "Wydajny napęd: Dron jest wyposażony w mocne silniki, które zapewniają szybkie przyspieszenia i dużą prędkość.",
+      "Odpowiedni dla FPV: iFlight Nazgul 5 jest gotowy do lotów w trybie FPV i obsługuje gogle FPV."
+    ],
+    "price": "1499 PLN",
+    "img_path": "nazgul5.jpg",
+    "drone_type": "FPV"
+  },
+  {
+    "name": "DJI Phantom",
+    "description": [
+      "DJI Phantom to dron, który od dawna cieszy się uznaniem profesjonalistów. Poznaj jego wyjątkowe cechy:",
+      "Kamera 6K: Dron jest wyposażony w kamerę o rozdzielczości 6K, co pozwala na nagrywanie wideo i robienie zdjęć w niesamowitej jakości.",
+      "Długi czas lotu: Dron oferuje imponujący czas lotu, dzięki czemu można rejestrować dłuższe sesje bez konieczności częstego lądowania.",
+      "Stabilność i precyzja: DJI Phantom ma zaawansowane systemy stabilizacji i nawigacji, co pozwala na precyzyjne loty nawet w trudnych warunkach."
+    ],
+    "price": "5699 PLN",
+    "img_path": "drone1.jpg",
+    "drone_type": "DJI"
+  },
+  {
+    "name": "iFlight ProTek25",
+    "description": [
+      "iFlight ProTek25 to dron stworzony z myślą o miłośnikach lotów FPV (First Person View) i wymagających użytkownikach. Poznaj jego wyjątkowe cechy:",
+      "Szybki i zwrotny: ProTek25 oferuje dynamiczny i zwrotny lot, co pozwala na imponujące manewry w powietrzu.",
+      "Wysoka jakość obrazu: Dron jest wyposażony w kamerę, która umożliwia nagrywanie wideo i oglądanie obrazu w czasie rzeczywistym w doskonałej jakości.",
+      "Odpowiedni dla FPV: ProTek25 jest gotowy do lotów w trybie FPV i obsługuje gogle FPV."
+    ],
+    "price": "1599 PLN",
+    "img_path": "protek25.jpg",
+    "drone_type": "FPV"
+  },
+  {
+    "name": "Yuneec H520",
+    "description": [
+      "Yuneec H520 to profesjonalny dron zaprojektowany z myślą o zastosowaniach komercyjnych. Poznaj jego wyjątkowe cechy:",
+      "Zawodowa jakość obrazu: H520 jest wyposażony w kamerę, która pozwala na nagrywanie wideo i robienie zdjęć w doskonałej jakości.",
+      "Długi czas lotu: Dron może latać przez długi czas, co umożliwia rozległe misje i zastosowania.",
+      "Wielofunkcyjność: Yuneec H520 to dron, który można dostosować do różnych celów, takich jak fotografia lotnicza, inspekcje i inne."
+    ],
+    "price": "4899 PLN",
+    "img_path": "yuneecH520.jpg",
+    "drone_type": "Yuneec"
+  },
+  {
+    "name": "Yuneec H850",
+    "description": [
+      "Yuneec H850 to profesjonalny dron zaprojektowany z myślą o zastosowaniach komercyjnych. Poznaj jego wyjątkowe cechy:",
+      "Zawodowa jakość obrazu: H850 jest wyposażony w kamerę, która pozwala na nagrywanie wideo i robienie zdjęć w doskonałej jakości.",
+      "Długi czas lotu: Dron może latać przez długi czas, co umożliwia rozległe misje i zastosowania.",
+      "Wielofunkcyjność: Yuneec H850 to dron, który można dostosować do różnych celów, takich jak fotografia lotnicza, inspekcje i inne."
+    ],
+    "price": "5999 PLN",
+    "img_path": "YuneecH850.jpg",
+    "drone_type": "Yuneec"
+  }
+]
