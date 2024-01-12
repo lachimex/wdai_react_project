@@ -14,13 +14,13 @@ export default function Menu() {
                 </div>
             </nav>
             <div id="subnav">
-                <Link to='/shop' className="link">
+                <Link to='/shop' className="link" id="link">
                     SKLEP
                 </Link>
-                <Link to='/courses' className="link">
+                <Link to='/courses' className="link" id="link">
                     KURSY
                 </Link>
-                <Link to='/contact' className="link">
+                <Link to='/contact' className="link" id="link">
                     KONTAKT
                 </Link>
             </div>

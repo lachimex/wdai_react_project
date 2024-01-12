@@ -1,15 +1,18 @@
 import "../drony/style.css"
+import { Link } from 'react-router-dom';
 export default function drone1({name, srcPath}){
     const imgPath = '/media/'+srcPath
-    console.log(imgPath)
+    const formatName = name => name.replace(/\s+/g, '-').toLowerCase();
+    console.log(`/drone/${formatName(name)}`)
+
     return (
-            <main>
+            <div className="drone_container">
                 <div className="container">
                     <img src={imgPath} alt="drone1"/>
-                    <a href="#">
+                    <Link to={`/drone/${formatName(name)}`}>
                         <button>{name}</button>
-                    </a>
+                    </Link>
                 </div>
-            </main>
+            </div>
         )
 }

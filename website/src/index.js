@@ -5,6 +5,7 @@ import MainPage from './main_page/main_page';
 import Menu from './menu/menu';
 import NoPage from './no_page/no_page';
 import Shop from './shop/shop';
+import DroneDetails from "./drone_details/droneDetails";
 
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/" element={<Menu />}>
           <Route index element={<MainPage />} />
           <Route path="/shop" element={<Shop />} />
+            <Route path="/drone/:droneName" element={<DroneDetails />} />
           {/* <Route path="contact" element={<Contact />} /> */}
           <Route path="/*" element={<NoPage />} />
         </Route>
