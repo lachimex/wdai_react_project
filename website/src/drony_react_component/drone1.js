@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 export default function drone1({name, srcPath}){
     const imgPath = '/media/'+srcPath
     const formatName = name => name.replace(/\s+/g, '-').toLowerCase();
-    console.log(`/drone/${formatName(name)}`)
 
     return (
             <div className="drone_container">
