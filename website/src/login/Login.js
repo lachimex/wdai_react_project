@@ -45,7 +45,7 @@ function App() {
             setMessage('zalogowano');
             localStorage.setItem("user", JSON.stringify({ token: response.data.token, user: response.data.username }));
             console.log(localStorage.getItem("user"));
-            updateValue("update from logging in login component");
+            updateValue(true);
         } catch (error) {
             setMessage('Invalid username or password');
         }
@@ -73,7 +73,7 @@ function App() {
         setUsername("");
         setPassword("");
         localStorage.removeItem("user");
-        updateValue("update from logging out login component");
+        updateValue(false);
     }
 
     const renderContentBasedOnState = () => {

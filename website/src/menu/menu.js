@@ -31,7 +31,7 @@ export default function Menu() {
                         <button onClick={() => {
                             localStorage.removeItem("user")
                             setIsLoggedIn(false);
-                            updateValue("update from menu logging out")}
+                            updateValue(false)}
                             }>wyloguj sie</button>
                     ) : null}
                     <Link to='/account'><img src="https://www.svgrepo.com/show/456992/account.svg" alt="accountIcon" /></Link>
