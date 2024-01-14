@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 import MainPage from './main_page/main_page';
 import Menu from './menu/menu';
 import NoPage from './no_page/no_page';
-import Shop from './shop/shop';
+import Shop from './shop/Shop';
 import DroneDetails from "./drone_details/droneDetails";
 
 
