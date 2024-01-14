@@ -13,10 +13,10 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Menu />}>
-          <Route index element={<MainPage />} />
-          <Route path="/shop" element={<Shop />} />
+          <Route index element={<Shop />} />
             <Route path="/drone/:droneName" element={<DroneDetails />} />
           {/* <Route path="contact" element={<Contact />} /> */}
+          <Route path='/shop' element={<Shop/>} />
           <Route path="/*" element={<NoPage />} />
         </Route>
       </Routes>
