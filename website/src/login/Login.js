@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
-import Menu from '../menu/menu';
+import MyContext from '../rendering/Context';
 
 function App() {
     const [username, setUsername] = useState('');
@@ -8,6 +8,7 @@ function App() {
     const [token, setToken] = useState('');
     const [message, setMessage] = useState('');
     const [state, setState] = useState("default");
+    const { sharedValue, updateValue } = useContext(MyContext);
 
     useEffect(() => {
         const storedUser = localStorage.getItem('user');
@@ -18,7 +19,10 @@ function App() {
             setToken(parsedUser.token);
             setState("logged in")
         }
-    }, []);
+        else{
+            setState("default")
+        }
+    }, [sharedValue]);
 
     function setConfirmationPassword(confirmationPassword){
         if (confirmationPassword != password){
@@ -41,7 +45,7 @@ function App() {
             setMessage('zalogowano');
             localStorage.setItem("user", JSON.stringify({ token: response.data.token, user: response.data.username }));
             console.log(localStorage.getItem("user"));
-
+            updateValue("update from logging in login component");
         } catch (error) {
             setMessage('Invalid username or password');
         }
@@ -69,6 +73,7 @@ function App() {
         setUsername("");
         setPassword("");
         localStorage.removeItem("user");
+        updateValue("update from logging out login component");
     }
 
     const renderContentBasedOnState = () => {

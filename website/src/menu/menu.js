@@ -1,28 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Outlet, Link } from "react-router-dom";
 import "./menu.css"
+import MyContext from '../rendering/Context';
 export default function Menu() {
       const [isLoggedIn, setIsLoggedIn] = useState(false);
+      const { sharedValue, updateValue } = useContext(MyContext);
 
   useEffect(() => {
-    // Function to handle storage change
-    const handleStorageChange = () => {
-      const userLoggedIn = localStorage.getItem('user') !== null;
-      setIsLoggedIn(userLoggedIn);
-    };
-
-    // Add event listener for storage change
-    window.addEventListener('storage', handleStorageChange);
-
-    // Initial check for user login status
-    const userLoggedIn = localStorage.getItem('user') !== null;
-    setIsLoggedIn(userLoggedIn);
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener('storage', handleStorageChange);
-    };
-  }, []);
+    const storedUser = localStorage.getItem('user');
+        
+        if (storedUser) {
+            setIsLoggedIn(true);
+        }
+        else{
+            setIsLoggedIn(false);
+        }
+    
+  }, [sharedValue]);
 
     return (
         <>
@@ -36,7 +30,8 @@ export default function Menu() {
                     {isLoggedIn ? (
                         <button onClick={() => {
                             localStorage.removeItem("user")
-                            setIsLoggedIn(false);}
+                            setIsLoggedIn(false);
+                            updateValue("update from menu logging out")}
                             }>wyloguj sie</button>
                     ) : null}
                     <Link to='/account'><img src="https://www.svgrepo.com/show/456992/account.svg" alt="accountIcon" /></Link>
