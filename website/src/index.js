@@ -1,10 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReactDOM from 'react-dom/client';
-import MainPage from './main_page/main_page';
 import Menu from './menu/menu';
 import NoPage from './no_page/no_page';
-import Shop from './shop/Shop';
+import Shop from './shop/shop' 
 import DroneDetails from "./drone_details/droneDetails";
 import Login from "./login/Login"
 import Provider from './rendering/Provider';

@@ -28,7 +28,7 @@ export default function Menu() {
                 <div id="icons">
                     <Link to='/cart'><img src="https://www.svgrepo.com/show/533043/cart-shopping.svg" alt="cartIcon" /></Link>
                     {isLoggedIn ? (
-                        <button onClick={() => {
+                        <button id='logout_button' onClick={() => {
                             localStorage.removeItem("user")
                             setIsLoggedIn(false);
                             updateValue(false)}
