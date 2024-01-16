@@ -1,28 +1,32 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReactDOM from 'react-dom/client';
-import MainPage from './main_page/main_page';
 import Menu from './menu/menu';
 import NoPage from './no_page/no_page';
-import Shop from './shop/shop';
+import Shop from './shop/shop' 
 import DroneDetails from "./drone_details/droneDetails";
-import Cart from "./cart/cart"
+import Login from "./login/Login"
+import Provider from './rendering/Provider';
+import Cart from './cart/Cart';
 
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Menu />}>
-          <Route index element={<MainPage />} />
-          <Route path="/shop" element={<Shop />} />
+    <Provider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Menu />}>
+            <Route index element={<Shop />} />
             <Route path="/drone/:droneName" element={<DroneDetails />} />
-          <Route path="/cart" element={<Cart />} />
-          {/* <Route path="contact" element={<Contact />} /> */}
-          <Route path="/*" element={<NoPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+            {/* <Route path="contact" element={<Contact />} /> */}
+            <Route path='/shop' element={<Shop />} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='/account' element={<Login />} />
+            <Route path="/*" element={<NoPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   );
 }
 

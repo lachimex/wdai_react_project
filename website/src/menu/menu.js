@@ -1,6 +1,23 @@
+import React, { useState, useEffect, useContext } from 'react';
 import { Outlet, Link } from "react-router-dom";
 import "./menu.css"
+import MyContext from '../rendering/Context';
 export default function Menu() {
+      const [isLoggedIn, setIsLoggedIn] = useState(false);
+      const { sharedValue, updateValue } = useContext(MyContext);
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+        
+        if (storedUser) {
+            setIsLoggedIn(true);
+        }
+        else{
+            setIsLoggedIn(false);
+        }
+    
+  }, [sharedValue]);
+
     return (
         <>
             <nav>
@@ -10,6 +27,13 @@ export default function Menu() {
                 </div>
                 <div id="icons">
                     <Link to='/cart'><img src="https://www.svgrepo.com/show/533043/cart-shopping.svg" alt="cartIcon" /></Link>
+                    {isLoggedIn ? (
+                        <button id='logout_button' onClick={() => {
+                            localStorage.removeItem("user")
+                            setIsLoggedIn(false);
+                            updateValue(false)}
+                            }>wyloguj sie</button>
+                    ) : null}
                     <Link to='/account'><img src="https://www.svgrepo.com/show/456992/account.svg" alt="accountIcon" /></Link>
                 </div>
             </nav>
@@ -24,7 +48,7 @@ export default function Menu() {
                     KONTAKT
                 </Link>
             </div>
-            <Outlet/>
+            <Outlet />
         </>
     )
 }
