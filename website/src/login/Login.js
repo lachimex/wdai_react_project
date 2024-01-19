@@ -84,7 +84,7 @@ function App() {
                     <div id='login_info'>
                         <h1>{username}</h1>
                         <button onClick={handleLogout}>Wyloguj się</button>
-                        <p>{message}</p>
+                        <p id='message'>{message}</p>
                     </div>)
             case "registering":
                 return (
@@ -102,7 +102,7 @@ function App() {
                             <button onClick={handleRegister}>Zarejestruj się</button>
                             <button onClick={() => setState("default")}>Powrót</button>
                         </div>
-                        <p>{message}</p>
+                        <p id='message'>{message}</p>
                     </div>
                 )
             case "default":
@@ -119,7 +119,7 @@ function App() {
                             <button onClick={handleLogin}>Login</button>
                             <button onClick={() => setState("registering")}>Zarejestruj się</button>
                         </div>
-                        <p>{message}</p>
+                        <p id='message'>{message}</p>
                     </div>
                 )
         }

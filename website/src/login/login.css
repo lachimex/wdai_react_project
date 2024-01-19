@@ -51,7 +51,7 @@
     background-color: #0056b3;
   }
   
-  p {
+  #message {
     margin-top: 10px;
     color: red;
     font-size: 14px;
