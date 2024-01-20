@@ -26,6 +26,7 @@ function App() {
     }, [sharedValue]);
 
     function setConfirmationPassword(confirmationPassword) {
+        setMessage("");
         if (confirmationPassword != password) {
             setMessage("hasła są różne");
         }
@@ -35,6 +36,7 @@ function App() {
     }
 
     const handleLogin = async () => {
+        setMessage("");
         try {
             const response = await axios.post('http://localhost:5000/login', {
                 username: username,
@@ -53,15 +55,16 @@ function App() {
     };
 
     const handleRegister = async () => {
+        console.log(message);
         try {
             const response = await axios.post('http://localhost:5000/register', {
                 username: username,
                 password: password,
             });
-            setMessage(JSON.stringify(response.data));
+            setMessage(JSON.stringify(response.data.msg));
             document.getElementById('username').value = '';
             document.getElementById('password').value = '';
-            document.getElementById('confirmationPassowrd').value = '';
+            document.getElementById('confirmationPassword').value = '';
         } catch (error) {
             setMessage('Invalid username or password');
         }
@@ -82,7 +85,8 @@ function App() {
             case "logged in":
                 return (
                     <div id='login_info'>
-                        <h1>{username}</h1>
+                        <h1>Użytkownik: {username}</h1>
+                        <img src='https://www.svgrepo.com/download/43426/profile.svg' id='profile_pic'></img>
                         <button onClick={handleLogout}>Wyloguj się</button>
                         <p id='message'>{message}</p>
                     </div>)
@@ -100,7 +104,12 @@ function App() {
                         </form>
                         <div id='buttons'>
                             <button onClick={handleRegister}>Zarejestruj się</button>
-                            <button onClick={() => setState("default")}>Powrót</button>
+                            <button onClick={() =>
+                            { 
+                            setState("default");
+                            setMessage("");
+                            }
+                            }>Powrót</button>
                         </div>
                         <p id='message'>{message}</p>
                     </div>
@@ -115,9 +124,12 @@ function App() {
                             <label>Password: </label>
                             <input id='password' type="password" onChange={(e) => setPassword(e.target.value)} />
                         </form>
-                        <div id='buttons'>
+                        <div id='default_button_div'>
                             <button onClick={handleLogin}>Login</button>
-                            <button onClick={() => setState("registering")}>Zarejestruj się</button>
+                            <p className='bordered-text'>Nie masz konta?</p>
+                            <button onClick={() => {
+                                setState("registering")
+                                setMessage("")}}>Zarejestruj się</button>
                         </div>
                         <p id='message'>{message}</p>
                     </div>

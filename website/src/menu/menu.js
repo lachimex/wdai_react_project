@@ -39,8 +39,6 @@ export default function Menu() {
                     ) : null}
                 </div>
             </nav>
-            <div id="subnav">
-            </div>
             <Outlet />
         </>
     )
