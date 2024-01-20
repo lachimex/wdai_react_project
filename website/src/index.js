@@ -7,6 +7,8 @@ import Shop from './shop/shop'
 import DroneDetails from "./drone_details/droneDetails";
 import Login from "./login/Login"
 import Provider from './rendering/Provider';
+import Footer from './footer/Footer';
+import './index.css'
 import Cart from './cart/cart';
 
 
@@ -15,12 +17,11 @@ export default function App() {
     <Provider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Menu />}>
+          <Route path="/" element={<><Menu /> <Footer/></>}>
             <Route index element={<Shop />} />
             <Route path="/drone/:droneName" element={<DroneDetails />} />
             {/* <Route path="contact" element={<Contact />} /> */}
             <Route path='/shop' element={<Shop />} />
-            <Route path='/cart' element={<Cart />} />
             <Route path='/account' element={<Login />} />
             <Route path="/*" element={<NoPage />} />
           </Route>

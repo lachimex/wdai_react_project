@@ -26,6 +26,11 @@ def hash_string(input_string):
 @app.route('/register', methods=["POST"])
 def register():
     username = request.json.get("username", None)
+    if len(username) <= 1 or len(request.json.get("password")) <= 1:
+        return jsonify({"msg": "User and password must be at least 2 signs"}), 200
+    for user in users:
+        if user['username'] == username:
+            return jsonify({"msg": "User is in the system already"}), 200
     hashed_password = hash_string(request.json.get("password"))
     users.append({'username': username, 'password': hashed_password})
     return jsonify({"msg": "User registered succesfully"}), 200
