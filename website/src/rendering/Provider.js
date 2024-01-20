@@ -4,18 +4,18 @@ import Context from './Context';
 
 const Provider = ({ children }) => {
   const [sharedValue, setSharedValue] = useState('Default Value');
-  const [sharedValue2, setSharedValue2] = useState('Default Value');
+  const [cartProducts, setCartProducts] = useState([]);
 
   const updateValue = (newValue) => {
     setSharedValue(newValue);
   };
 
-  const updateValue2 = (newValue) => {
-    setSharedValue2(newValue);
+  const updateCartContent = (newProduct) => {
+    setCartProducts((prevProducts) => [...prevProducts, newProduct]);
   };
 
   return (
-    <Context.Provider value={{ sharedValue, updateValue, sharedValue2, setSharedValue2 }}>
+    <Context.Provider value={{ sharedValue, updateValue, cartProducts, updateCartContent }}>
       {children}
     </Context.Provider>
   );

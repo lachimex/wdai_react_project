@@ -7,7 +7,7 @@ import Shop from './shop/shop'
 import DroneDetails from "./drone_details/droneDetails";
 import Login from "./login/Login"
 import Provider from './rendering/Provider';
-import Cart from './cart/Cart';
+import Cart from './cart/cart';
 
 
 export default function App() {

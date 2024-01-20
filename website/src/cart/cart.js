@@ -1,9 +1,10 @@
 import "./cart.css"
 import CartProduct from "./cartProduct"
+import MyContext from '../rendering/Context';
+import {useContext} from "react";
 
-export default function cart(){
-    const productList = [{ id: 1, name: 'Product 1', price: 20 },
-        { id: 1, name: 'Product 1', price: 20 }, { id: 1, name: 'Product 1', price: 20 }, { id: 1, name: 'Product 1', price: 20 }]
+export default function Cart(){
+    const {cartProducts, updateCartContent} = useContext(MyContext);
     return (
         <main>
             <div className="products_legend">
@@ -12,9 +13,13 @@ export default function cart(){
                 <h3>Ilość</h3>
                 <h3>Razem</h3>
             </div>
-            {productList.map(product => (
-                <CartProduct />
-            ))}
+            {cartProducts && cartProducts.length > 0 ? (
+                cartProducts.map((product, index) => (
+                    <CartProduct key={index} product={product} />
+                ))
+            ) : (
+                <div>No items in the cart</div>
+            )}
         </main>
     )
 }
