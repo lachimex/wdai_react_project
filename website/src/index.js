@@ -9,6 +9,7 @@ import Login from "./login/Login"
 import Provider from './rendering/Provider';
 import Footer from './footer/Footer';
 import './index.css'
+import Cart from './cart/cart';
 
 
 export default function App() {
