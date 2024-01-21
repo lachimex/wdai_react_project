@@ -5,18 +5,43 @@ import CWL from "./CartWithoutLogin";
 import {useContext, useEffect, useState} from "react";
 
 export default function Cart(){
-    const {cartProducts, updateCartContent} = useContext(MyContext);
+    const {userCarts, updateCartContent} = useContext(MyContext);
     const [wholePrice, setWholePrice] = useState(0);
-    const storedUser = localStorage.getItem('user');
+    const storedUser = JSON.parse(localStorage.getItem('user')).user;
+    const { sharedValue, updateValue } = useContext(MyContext);
+    const userCartProducts = userCarts[storedUser] || [];
 
     useEffect(() => {
-        // Calculate the total price when cartProducts change
-        const total = cartProducts.reduce((acc, product) => {
+        const storedCarts = localStorage.getItem('userCarts');
+        const parsedCarts = JSON.parse(storedCarts);
+        const userCartProducts = parsedCarts[storedUser] || [];
+        console.log(userCartProducts)
+        //if (userCartProducts) updateCartContent(storedUser, userCartProducts);
+    }, []);
+
+    useEffect(() => {
+        const storedCarts = localStorage.getItem('userCarts');
+        if (storedCarts && sharedValue) {
+            updateCartContent(storedUser, userCartProducts);
+        }
+    }, [sharedValue]);
+
+
+    useEffect(() => {
+        if (JSON.stringify(userCarts) !== "{}"){
+            console.log(JSON.stringify("etap 2: " + userCarts))
+            localStorage.setItem('userCarts', JSON.stringify(userCarts));
+            console.log("etap 3: " + userCarts[storedUser])
+        }
+    }, [userCarts]);
+
+    useEffect(() => {
+        const total = userCartProducts.reduce((acc, product) => {
             return acc + product.numericPrice * product.quantity;
         }, 0);
 
         setWholePrice(total);
-    }, [cartProducts]);
+    }, [userCartProducts]);
 
     return (
         storedUser != null ? (
@@ -27,8 +52,8 @@ export default function Cart(){
               <h3>Ilość</h3>
               <h3>Razem</h3>
             </div>
-            {cartProducts && cartProducts.length > 0 ? (
-              cartProducts.map((product, index) => (
+            {userCartProducts && userCartProducts.length > 0 ? (
+                userCartProducts.map((product, index) => (
                 <CartProduct key={index} product={product} />
               ))
             ) : (

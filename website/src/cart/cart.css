@@ -55,14 +55,36 @@
 }
 
 .products_legend{
-    width: 100%;
+    width: 95%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-right: 5%;
 }
 
 .overall_container{
-    width: 15%;
+    width: 10%;
     display: flex;
     justify-content: flex-end;
+}
+
+.remove_button_container {
+    width: 5%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.remove_button_container img {
+    width: 40px;
+    height: 40px;
+    transition: ease-in-out all 0.2s;
+}
+
+.remove_button_container img :hover {
+    scale: 1.2;
+    cursor: pointer;
+}
+
+.remove_button_container img :active {
+    scale: 1.05;
 }

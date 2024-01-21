@@ -1,21 +1,25 @@
 // MyProvider.js
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import Context from './Context';
 
 const Provider = ({ children }) => {
-  const [sharedValue, setSharedValue] = useState('Default Value');
-  const [cartProducts, setCartProducts] = useState([]);
+  const [sharedValue, setSharedValue] = useState(false);
+  const [userCarts, setUserCarts] = useState({});
 
   const updateValue = (newValue) => {
     setSharedValue(newValue);
   };
 
-  const updateCartContent = (newProducts) => {
-    setCartProducts(newProducts);
+  const updateCartContent = (user, newProducts) => {
+    setUserCarts((prevCarts) => ({
+      ...prevCarts,
+      [user]: newProducts,
+    }));
   };
 
+
   return (
-      <Context.Provider value={{ sharedValue, updateValue, cartProducts, updateCartContent }}>
+      <Context.Provider value={{ sharedValue, updateValue, userCarts, updateCartContent }}>
         {children}
       </Context.Provider>
   );
