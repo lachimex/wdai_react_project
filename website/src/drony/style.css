@@ -50,15 +50,16 @@
 /*    background-color: #0A0A0A;*/
 /*}*/
 
-main{
+.shop_main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin: 0 5% 3% 5%;
-    width: 100%;
+    width: 90%;
 }
 
-main h1 {
+.shop_main h1 {
     font-size: 400%;
 }
 

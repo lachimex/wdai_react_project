@@ -1,5 +1,12 @@
 main{
     display: flex;
+    flex: 1;
     flex-direction: column;
     min-height: 100%;
+}
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }

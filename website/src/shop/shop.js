@@ -12,7 +12,7 @@ export default function Shop() {
     const yuneecDrones = jsonData.filter(drone => drone.drone_type === 'Yuneec');
 
     return (
-        <main>
+        <div className="shop_main">
             <Suspense fallback={<p>Loading...</p>}>
                 <>
                     <h1>DJI</h1>
@@ -35,6 +35,6 @@ export default function Shop() {
                     </div>
                 </>
             </Suspense>
-        </main>
+        </div>
     );
 }
