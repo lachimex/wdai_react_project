@@ -1,16 +1,37 @@
-import React, { useState } from 'react';
+import React, {useContext, useEffect, useState} from 'react';
+import MyContext from "../rendering/Context";
 
 const CartProduct = ({product}) => {
-    const [quantity, setQuantity] = useState(1);
-    const [price, setPrice] = useState(product.price)
+    const {cartProducts, updateCartContent} = useContext(MyContext);
+    const [quantity, setQuantity] = useState(product.quantity);
+    const [price] = useState(product.numericPrice);
+    const [overallProductPrice, setOverallProductPrice] = useState(price * quantity);
 
     function increaseQuantity() {
         setQuantity(prevQuantity => prevQuantity + 1);
+
+        const existingProductIndex = cartProducts.findIndex(product2 => product2.name === product.name);
+        if (existingProductIndex !== -1) {
+            const updatedCart = [...cartProducts];
+            updatedCart[existingProductIndex].quantity += 1;
+            updateCartContent(updatedCart);
+        }
     }
+
+    useEffect(() => {
+        setOverallProductPrice(price * quantity);
+    }, [quantity]);
 
     function decreaseQuantity() {
         if (quantity > 1) {
             setQuantity(prevQuantity => prevQuantity - 1);
+
+            const existingProductIndex = cartProducts.findIndex(product2 => product2.name === product.name);
+            if (existingProductIndex !== -1) {
+                const updatedCart = [...cartProducts];
+                updatedCart[existingProductIndex].quantity -= 1;
+                updateCartContent(updatedCart);
+            }
         }
     }
 
@@ -20,7 +41,7 @@ const CartProduct = ({product}) => {
                 <img src={`/media/${product.img_path}`}/>
             </div>
             <div className="single_price_container">
-                <p>{product.price} zł</p>
+                <p>{price} zł</p>
             </div>
             <div className="quantity_container">
                 <p>{quantity}</p>
@@ -30,7 +51,7 @@ const CartProduct = ({product}) => {
                 </div>
             </div>
             <div className="overall_container">
-                <p>{price * quantity} zł</p>
+                <p>{overallProductPrice} zł</p>
             </div>
         </div>
     )

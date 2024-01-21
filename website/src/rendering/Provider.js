@@ -10,14 +10,14 @@ const Provider = ({ children }) => {
     setSharedValue(newValue);
   };
 
-  const updateCartContent = (newProduct) => {
-    setCartProducts((prevProducts) => [...prevProducts, newProduct]);
+  const updateCartContent = (newProducts) => {
+    setCartProducts(newProducts);
   };
 
   return (
-    <Context.Provider value={{ sharedValue, updateValue, cartProducts, updateCartContent }}>
-      {children}
-    </Context.Provider>
+      <Context.Provider value={{ sharedValue, updateValue, cartProducts, updateCartContent }}>
+        {children}
+      </Context.Provider>
   );
 };
 

@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import jsonData from '../drony/droneData.json';
 import '../drony/product.css'
 import { useParams } from 'react-router-dom';
@@ -9,6 +9,7 @@ export default function DroneDetails() {
     const formatName = drone_name => drone_name.replace(/\s+/g, '-').toLowerCase();
     const selectedDrone = jsonData.find(drone => formatName(drone.name) === droneName);
     const {cartProducts, updateCartContent} = useContext(MyContext);
+    const [showMessage, setShowMessage] = useState(false);
 
     if (!selectedDrone) {
         return <div>Drone not found</div>;
@@ -17,18 +18,34 @@ export default function DroneDetails() {
     const { name, img_path, description, price } = selectedDrone;
 
     const addToCart = () => {
-        const newProduct = {
-            name,
-            img_path,
-            description,
-            price,
-        };
+        const existingProductIndex = cartProducts.findIndex(product => product.name === name);
 
-        updateCartContent(newProduct);
+        if (existingProductIndex !== -1) {
+            const updatedCart = [...cartProducts];
+            updatedCart[existingProductIndex].quantity += 1;
+            updateCartContent(updatedCart);
+        } else {
+            const numericPrice = parseFloat(price.replace(/[^\d.]/g, ''));
+            const newProduct = {
+                name,
+                img_path,
+                description,
+                numericPrice,
+                quantity: 1,
+            };
+
+            updateCartContent([...cartProducts, newProduct]);
+        }
+
+        setShowMessage(true);
+
+        setTimeout(() => {
+            setShowMessage(false);
+        }, 3000)
     };
 
     return (
-        <main>
+        <div className="drone_details_main">
             <h1>{name}</h1>
             <div className="drone_section">
                 <div className="drone_container">
@@ -44,7 +61,7 @@ export default function DroneDetails() {
                         <li>{description[3]}</li>
                     </ul>
                     <div className="button-container">
-                        <p><strong>{price} PLN</strong></p>
+                        <p><strong>{price}</strong></p>
                         <div>
                             <button className="buy-now-button">Kup teraz</button>
                             <button className="buy-now-button" onClick={addToCart}>Dodaj do koszyka</button>
@@ -52,6 +69,7 @@ export default function DroneDetails() {
                     </div>
                 </div>
             </div>
-        </main>
+            {showMessage && <p className="added_to_cart_message">Product added to cart!</p>}
+        </div>
     );
 }
