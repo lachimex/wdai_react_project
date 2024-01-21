@@ -33,6 +33,9 @@ function App() {
         else {
             setMessage("");
         }
+        setTimeout(() => {
+            setMessage("");
+        }, 3000)
     }
 
     const handleLogin = async () => {
@@ -52,6 +55,9 @@ function App() {
         } catch (error) {
             setMessage('Invalid username or password');
         }
+        setTimeout(() => {
+            setMessage("");
+        }, 3000)
     };
 
     const handleRegister = async () => {
@@ -78,6 +84,9 @@ function App() {
         setPassword("");
         localStorage.removeItem("user");
         updateValue(false);
+        setTimeout(() => {
+            setMessage("");
+        }, 3000)
     }
 
     const renderContentBasedOnState = () => {

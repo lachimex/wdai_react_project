@@ -15,6 +15,7 @@ app.config["JWT_SECRET_KEY"] = "super-secret"
 jwt = JWTManager(app)
 
 users = []
+logged_user = ""
 
 def hash_string(input_string):
     sha256_hash = hashlib.sha256()
@@ -47,6 +48,7 @@ def login():
                 'token': access_token,
                 'username': user['username'],
                 }
+            logged_user = user['username']
             return jsonify(response_data)
     else:
         return jsonify({"msg": "Bad username or password"}), 401
@@ -57,6 +59,9 @@ def login():
 def protected():
     current_user = get_jwt_identity()
     return jsonify(logged_in_as=current_user), 200
+
+def getLoggedInUser():
+    return logged_user
 
 
 if __name__ == '__main__':

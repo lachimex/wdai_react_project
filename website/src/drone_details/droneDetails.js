@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react'
+import React, { useContext, useState } from 'react'
 import jsonData from '../drony/droneData.json';
 import '../drony/product.css'
 import { useParams } from 'react-router-dom';
@@ -8,8 +8,9 @@ export default function DroneDetails() {
     const { droneName } = useParams();
     const formatName = drone_name => drone_name.replace(/\s+/g, '-').toLowerCase();
     const selectedDrone = jsonData.find(drone => formatName(drone.name) === droneName);
-    const {cartProducts, updateCartContent} = useContext(MyContext);
-    const [showMessage, setShowMessage] = useState(false);
+    const { cartProducts, updateCartContent } = useContext(MyContext);
+    const [message, setMessage] = useState("");
+    const storedUser = localStorage.getItem('user');
 
     if (!selectedDrone) {
         return <div>Drone not found</div>;
@@ -37,10 +38,9 @@ export default function DroneDetails() {
             updateCartContent([...cartProducts, newProduct]);
         }
 
-        setShowMessage(true);
-
+        setMessage("Product added to cart!");
         setTimeout(() => {
-            setShowMessage(false);
+            setMessage("");
         }, 3000)
     };
 
@@ -64,12 +64,22 @@ export default function DroneDetails() {
                         <p><strong>{price}</strong></p>
                         <div>
                             <button className="buy-now-button">Kup teraz</button>
-                            <button className="buy-now-button" onClick={addToCart}>Dodaj do koszyka</button>
+                            <button className="buy-now-button" onClick={() => {
+                                if (storedUser != null) {
+                                    addToCart();
+                                }
+                                else {
+                                    setMessage("Musisz być zalogowany przed dodaniem do koszyka.")
+                                    setTimeout(() => {
+                                        setMessage("");
+                                    }, 3000)
+                                }
+                            }}>Dodaj do koszyka</button>
                         </div>
                     </div>
                 </div>
             </div>
-            {showMessage && <p className="added_to_cart_message">Product added to cart!</p>}
+            {<p className="added_to_cart_message">{message}</p>}
         </div>
     );
 }
