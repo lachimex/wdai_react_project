@@ -19,12 +19,15 @@ export default function DroneDetails() {
     const { name, img_path, description, price } = selectedDrone;
 
     const addToCart = () => {
+        const loggedUser = JSON.parse(localStorage.getItem('user')).user;
         const existingProductIndex = cartProducts.findIndex(product => product.name === name);
 
         if (existingProductIndex !== -1) {
             const updatedCart = [...cartProducts];
             updatedCart[existingProductIndex].quantity += 1;
             updateCartContent(updatedCart);
+            localStorage.setItem(loggedUser, JSON.stringify(updatedCart))
+            console.log(localStorage.getItem(loggedUser))
         } else {
             const numericPrice = parseFloat(price.replace(/[^\d.]/g, ''));
             const newProduct = {
@@ -36,7 +39,14 @@ export default function DroneDetails() {
             };
 
             updateCartContent([...cartProducts, newProduct]);
+            if (localStorage.getItem(loggedUser) != null){
+                localStorage.setItem(loggedUser, localStorage.getItem(loggedUser) + ", " + JSON.stringify(newProduct))
+            } else{
+                localStorage.setItem(loggedUser, JSON.stringify(newProduct))
+            }
+            console.log(localStorage.getItem(loggedUser))
         }
+
 
         setMessage("Product added to cart!");
         setTimeout(() => {
