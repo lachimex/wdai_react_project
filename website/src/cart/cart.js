@@ -26,9 +26,11 @@ export default function Cart(){
         if (JSON.stringify(userCarts) === "{}"){
             const storedCarts = localStorage.getItem('userCarts');
             const storedCartsParsed = JSON.parse(storedCarts)
-            Object.keys(storedCartsParsed).forEach((key) => (
-                updateCartContent(key, storedCartsParsed[key])
-            ))
+            if (storedCartsParsed !== null) {
+                Object.keys(storedCartsParsed).forEach((key) => (
+                    updateCartContent(key, storedCartsParsed[key])
+                ))
+            }
             //console.log(JSON.parse(storedCarts))
         }
         console.log("test")
