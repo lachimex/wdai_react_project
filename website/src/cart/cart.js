@@ -7,31 +7,37 @@ import {useContext, useEffect, useState} from "react";
 export default function Cart(){
     const {userCarts, updateCartContent} = useContext(MyContext);
     const [wholePrice, setWholePrice] = useState(0);
-    const storedUser = JSON.parse(localStorage.getItem('user')).user;
+    const [storedUser, setStoredUser] = useState();
     const { sharedValue, updateValue } = useContext(MyContext);
     const userCartProducts = userCarts[storedUser] || [];
 
     useEffect(() => {
-        const storedCarts = localStorage.getItem('userCarts');
-        const parsedCarts = JSON.parse(storedCarts);
-        const userCartProducts = parsedCarts[storedUser] || [];
-        console.log(userCartProducts)
-        //if (userCartProducts) updateCartContent(storedUser, userCartProducts);
+        const storedUserData = localStorage.getItem('user');
+        if (storedUserData) {
+            const parsedUser = JSON.parse(storedUserData).user;
+            setStoredUser(parsedUser);
+        } else {
+            console.warn("'user' data not found in localStorage");
+        }
     }, []);
 
     useEffect(() => {
-        const storedCarts = localStorage.getItem('userCarts');
-        if (storedCarts && sharedValue) {
-            updateCartContent(storedUser, userCartProducts);
+        //console.log(storedUser)
+        if (JSON.stringify(userCarts) === "{}"){
+            const storedCarts = localStorage.getItem('userCarts');
+            const storedCartsParsed = JSON.parse(storedCarts)
+            Object.keys(storedCartsParsed).forEach((key) => (
+                updateCartContent(key, storedCartsParsed[key])
+            ))
+            //console.log(JSON.parse(storedCarts))
         }
     }, [sharedValue]);
 
-
     useEffect(() => {
+        //console.log(userCarts)
         if (JSON.stringify(userCarts) !== "{}"){
-            console.log(JSON.stringify("etap 2: " + userCarts))
             localStorage.setItem('userCarts', JSON.stringify(userCarts));
-            console.log("etap 3: " + userCarts[storedUser])
+            //console.log(JSON.stringify(userCarts))
         }
     }, [userCarts]);
 

@@ -6,7 +6,18 @@ const CartProduct = ({product}) => {
     const [quantity, setQuantity] = useState(product.quantity);
     const [price] = useState(product.numericPrice);
     const [overallProductPrice, setOverallProductPrice] = useState(price * quantity);
-    const storedUser = JSON.parse(localStorage.getItem('user')).user;
+    const [storedUser, setStoredUser] = useState();
+
+    useEffect(() => {
+        const storedUserData = localStorage.getItem('user');
+        if (storedUserData) {
+            const parsedUser = JSON.parse(storedUserData).user;
+            setStoredUser(parsedUser);
+        } else {
+
+            console.warn("'user' data not found in localStorage");
+        }
+    }, []);
 
     function increaseQuantity() {
         setQuantity((prevQuantity) => prevQuantity + 1);
