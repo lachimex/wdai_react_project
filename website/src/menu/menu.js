@@ -35,6 +35,7 @@ export default function Menu() {
                             localStorage.removeItem("user")
                             setIsLoggedIn(false);
                             updateValue(false)
+                            window.location.reload()
                         }} />
                     ) : null}
                 </div>

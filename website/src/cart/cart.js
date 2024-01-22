@@ -19,7 +19,7 @@ export default function Cart(){
         } else {
             console.warn("'user' data not found in localStorage");
         }
-    }, []);
+    }, [sharedValue]);
 
     useEffect(() => {
         //console.log(storedUser)
@@ -31,6 +31,7 @@ export default function Cart(){
             ))
             //console.log(JSON.parse(storedCarts))
         }
+        console.log("test")
     }, [sharedValue]);
 
     useEffect(() => {
@@ -50,7 +51,7 @@ export default function Cart(){
     }, [userCartProducts]);
 
     return (
-        storedUser != null ? (
+        storedUser ? (
           <div className="cart_main">
             <div className="products_legend">
               <h3>Produkt</h3>
