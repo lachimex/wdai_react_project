@@ -10,6 +10,7 @@ function App() {
     const [message, setMessage] = useState('');
     const [state, setState] = useState("default");
     const { sharedValue, updateValue } = useContext(MyContext);
+    const {userCarts, updateCartContent} = useContext(MyContext);
 
     useEffect(() => {
         const storedUser = localStorage.getItem('user');
@@ -23,7 +24,7 @@ function App() {
         else {
             setState("default")
         }
-    }, [sharedValue]);
+    }, [sharedValue, userCarts]);
 
     function setConfirmationPassword(confirmationPassword) {
         setMessage("");
