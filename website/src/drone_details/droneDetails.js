@@ -8,9 +8,9 @@ export default function DroneDetails() {
     const { droneName } = useParams();
     const formatName = drone_name => drone_name.replace(/\s+/g, '-').toLowerCase();
     const selectedDrone = jsonData.find(drone => formatName(drone.name) === droneName);
-    const { cartProducts, updateCartContent } = useContext(MyContext);
+    const { userCarts, updateCartContent } = useContext(MyContext);
     const [message, setMessage] = useState("");
-    const storedUser = localStorage.getItem('user');
+    const storedUser = JSON.parse(localStorage.getItem('user')).user;
 
     if (!selectedDrone) {
         return <div>Drone not found</div>;
@@ -19,12 +19,15 @@ export default function DroneDetails() {
     const { name, img_path, description, price } = selectedDrone;
 
     const addToCart = () => {
-        const existingProductIndex = cartProducts.findIndex(product => product.name === name);
+        const user = storedUser || 'guest';
+        const userCart = userCarts[user] || [];
+
+        const existingProductIndex = userCart.findIndex((product) => product.name === name);
 
         if (existingProductIndex !== -1) {
-            const updatedCart = [...cartProducts];
+            const updatedCart = [...userCart];
             updatedCart[existingProductIndex].quantity += 1;
-            updateCartContent(updatedCart);
+            updateCartContent(user, updatedCart);
         } else {
             const numericPrice = parseFloat(price.replace(/[^\d.]/g, ''));
             const newProduct = {
@@ -35,15 +38,14 @@ export default function DroneDetails() {
                 quantity: 1,
             };
 
-            updateCartContent([...cartProducts, newProduct]);
+            updateCartContent(user, [...userCart, newProduct]);
         }
 
-        setMessage("Product added to cart!");
+        setMessage('Product added to cart!');
         setTimeout(() => {
-            setMessage("");
-        }, 3000)
+            setMessage('');
+        }, 3000);
     };
-
     return (
         <div className="drone_details_main">
             <h1>{name}</h1>

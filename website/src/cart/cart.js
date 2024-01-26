@@ -5,21 +5,55 @@ import CWL from "./CartWithoutLogin";
 import {useContext, useEffect, useState} from "react";
 
 export default function Cart(){
-    const {cartProducts, updateCartContent} = useContext(MyContext);
+    const {userCarts, updateCartContent} = useContext(MyContext);
     const [wholePrice, setWholePrice] = useState(0);
-    const storedUser = localStorage.getItem('user');
+    const [storedUser, setStoredUser] = useState();
+    const { sharedValue, updateValue } = useContext(MyContext);
+    const userCartProducts = userCarts[storedUser] || [];
 
     useEffect(() => {
-        // Calculate the total price when cartProducts change
-        const total = cartProducts.reduce((acc, product) => {
+        const storedUserData = localStorage.getItem('user');
+        if (storedUserData) {
+            const parsedUser = JSON.parse(storedUserData).user;
+            setStoredUser(parsedUser);
+        } else {
+            console.warn("'user' data not found in localStorage");
+        }
+    }, [sharedValue]);
+
+    useEffect(() => {
+        //console.log(storedUser)
+        if (JSON.stringify(userCarts) === "{}"){
+            const storedCarts = localStorage.getItem('userCarts');
+            const storedCartsParsed = JSON.parse(storedCarts)
+            if (storedCartsParsed !== null) {
+                Object.keys(storedCartsParsed).forEach((key) => (
+                    updateCartContent(key, storedCartsParsed[key])
+                ))
+            }
+            //console.log(JSON.parse(storedCarts))
+        }
+        console.log("test")
+    }, [sharedValue]);
+
+    useEffect(() => {
+        //console.log(userCarts)
+        if (JSON.stringify(userCarts) !== "{}"){
+            localStorage.setItem('userCarts', JSON.stringify(userCarts));
+            //console.log(JSON.stringify(userCarts))
+        }
+    }, [userCarts]);
+
+    useEffect(() => {
+        const total = userCartProducts.reduce((acc, product) => {
             return acc + product.numericPrice * product.quantity;
         }, 0);
 
         setWholePrice(total);
-    }, [cartProducts]);
+    }, [userCartProducts]);
 
     return (
-        storedUser != null ? (
+        storedUser ? (
           <div className="cart_main">
             <div className="products_legend">
               <h3>Produkt</h3>
@@ -27,8 +61,8 @@ export default function Cart(){
               <h3>Ilość</h3>
               <h3>Razem</h3>
             </div>
-            {cartProducts && cartProducts.length > 0 ? (
-              cartProducts.map((product, index) => (
+            {userCartProducts && userCartProducts.length > 0 ? (
+                userCartProducts.map((product, index) => (
                 <CartProduct key={index} product={product} />
               ))
             ) : (
