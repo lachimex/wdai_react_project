@@ -8,9 +8,8 @@ body{
 .login {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   flex: 1;
-  margin-top: 50px;
-  margin-bottom: 50px;
   min-height: 100%;
 }
 

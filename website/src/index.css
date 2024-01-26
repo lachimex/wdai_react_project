@@ -10,3 +10,7 @@ main{
     display: flex;
     align-items: center;
 }
+
+button{
+    background-color: #305252;
+}

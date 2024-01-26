@@ -1,0 +1,13 @@
+.drone_details_main h1 {
+    margin: 50px;
+}
+
+.drone_details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.drone_details button{
+    background-color: #305252;
+}

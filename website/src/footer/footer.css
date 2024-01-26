@@ -1,7 +1,12 @@
 footer {
     position: relative;
     bottom: 0;
-    background-color: green;
+    background-color: #305252;
     height: 50px;
     width: 100%;
+    color: white;
+}
+
+footer p{
+    margin-left: 50px;
 }

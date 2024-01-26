@@ -3,6 +3,7 @@ import jsonData from '../drony/droneData.json';
 import '../drony/product.css'
 import { useParams } from 'react-router-dom';
 import MyContext from '../rendering/Context';
+import './droneDetails.css'
 
 export default function DroneDetails() {
     const { droneName } = useParams();
