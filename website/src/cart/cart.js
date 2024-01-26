@@ -33,7 +33,6 @@ export default function Cart(){
             }
             //console.log(JSON.parse(storedCarts))
         }
-        console.log("test")
     }, [sharedValue]);
 
     useEffect(() => {
@@ -52,6 +51,10 @@ export default function Cart(){
         setWholePrice(total);
     }, [userCartProducts]);
 
+    function handleButNow(){
+        updateCartContent(storedUser, [])
+    }
+
     return (
         storedUser ? (
           <div className="cart_main">
@@ -69,6 +72,7 @@ export default function Cart(){
               <div>No items in the cart</div>
             )}
             <p>Całkowita cena: <strong>{wholePrice}</strong> zł</p>
+            <button className="buy-now-button" onClick={handleButNow}>Kup teraz</button>
           </div>
         ) : (
             <div className="cart_main">

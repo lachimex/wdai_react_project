@@ -47,7 +47,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 30%;
+    width: 23%;
 }
 .quantity_container button {
     padding: 10px;
@@ -63,7 +63,7 @@
 }
 
 .overall_container{
-    width: 10%;
+    width: 17%;
     display: flex;
     justify-content: flex-end;
 }
@@ -80,11 +80,11 @@
     transition: ease-in-out all 0.2s;
 }
 
-.remove_button_container img :hover {
+.remove_button_container :hover {
     scale: 1.2;
     cursor: pointer;
 }
 
-.remove_button_container img :active {
+.remove_button_container :active {
     scale: 1.05;
 }

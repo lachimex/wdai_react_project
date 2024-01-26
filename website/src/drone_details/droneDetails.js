@@ -10,7 +10,8 @@ export default function DroneDetails() {
     const selectedDrone = jsonData.find(drone => formatName(drone.name) === droneName);
     const { userCarts, updateCartContent } = useContext(MyContext);
     const [message, setMessage] = useState("");
-    const storedUser = JSON.parse(localStorage.getItem('user')).user;
+    const localStorageUser = localStorage.getItem('user')
+    const storedUser = localStorageUser ? JSON.parse(localStorageUser).user : null;
 
     if (!selectedDrone) {
         return <div>Drone not found</div>;
@@ -65,7 +66,6 @@ export default function DroneDetails() {
                     <div className="button-container">
                         <p><strong>{price}</strong></p>
                         <div>
-                            <button className="buy-now-button">Kup teraz</button>
                             <button className="buy-now-button" onClick={() => {
                                 if (storedUser != null) {
                                     addToCart();

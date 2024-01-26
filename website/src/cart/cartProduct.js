@@ -40,6 +40,7 @@ const CartProduct = ({product}) => {
             (product2) => product2.name !== product.name
         );
         updateCartContent(storedUser, updatedCart);
+        window.location.reload()
     }
 
     function updateCart(updatedProduct, updatedQuantity) {
